@@ -7,8 +7,9 @@ import time
 import os
 from PIL import Image
 from selenium.common.exceptions import TimeoutException
+import csv
 
-# config
+## config
 
 # initializing venv
 # python3 -m venv venv
@@ -25,7 +26,7 @@ with open('pid_link.json', 'r') as json_file:
     urls = json.load(json_file)
 
 #For Firefox driver
-firefox_service = FirefoxService(executable_path="/Users/renekooiker/Desktop/www/caridischo/geckodriver")
+firefox_service = FirefoxService(executable_path="/Users/renekooiker/Desktop/www/caridischo-screenshots/geckodriver")
 firefox_options = FirefoxOptions()
 firefox_options.add_argument('--headless')
 driver = webdriver.Firefox(service=firefox_service, options=firefox_options)
@@ -49,7 +50,7 @@ for pid, url in urls.items():
             print(f"Files {png_path} and {jpg_path} already exist. Skipping...")
             continue
         driver.get(url)
-        time.sleep(2)  # wait for the page to load
+        time.sleep(5)  # wait for the page to load
 
         driver.save_screenshot(png_path)
         # Convert PNG to JPG
@@ -84,10 +85,25 @@ for pid, url in urls.items():
         missing_files.append(pid)
 
 # Print the list of pids with missing files
+# Create a dictionary to store the links and labels
+pid_links_labels = {}
+
+# Read the CSV file and populate the dictionary
+with open('Directory of Caribbean Digital Scholarship - Data Sheet - 2024.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    next(csv_reader)  # Skip the header row
+    for row in csv_reader:
+        pid = row[0]
+        label = row[1]
+        link = row[5]
+        pid_links_labels[pid] = (label, link)
+
+# Print the links and labels for missing files
 if missing_files:
     print("Missing files for the following pids:")
     for pid in missing_files:
-        print(pid)
+        link, label = pid_links_labels.get(pid, ("", ""))
+        print(f"PID: {pid}, Link: {link}, Label: {label}")
 else:
     print("All files exist for all pids.")
 

@@ -122,6 +122,7 @@ Files screenshots/png/cds93.png and screenshots/jpg/cds93.jpg already exist. Ski
 Files screenshots/png/cds94.png and screenshots/jpg/cds94.jpg already exist. Skipping...
 Files screenshots/png/cds96.png and screenshots/jpg/cds96.jpg already exist. Skipping...
 Files screenshots/png/cds97.png and screenshots/jpg/cds97.jpg already exist. Skipping...
+Files screenshots/png/cds98.png and screenshots/jpg/cds98.jpg already exist. Skipping...
 Files screenshots/png/cds99.png and screenshots/jpg/cds99.jpg already exist. Skipping...
 Files screenshots/png/cds197.png and screenshots/jpg/cds197.jpg already exist. Skipping...
 Files screenshots/png/cds198.png and screenshots/jpg/cds198.jpg already exist. Skipping...
@@ -266,14 +267,6 @@ onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:330:39
 emit@resource://gre/modules/EventEmitter.sys.mjs:148:20
 receiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25
 
-Error for cds98: Alert Text: None
-Message: Dismissed user prompt dialog: This site is asking you to sign in.
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
-UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:800:5
-GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:2835:13
-
 Error for cds166: Message: Navigation timed out after 30000 ms
 Stacktrace:
 RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
@@ -288,20 +281,22 @@ WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
 TimeoutError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:740:5
 bail@chrome://remote/content/marionette/sync.sys.mjs:211:19
 
-Error for cds58: Message: Navigation timed out after 30000 ms
+Error for cds58: Message: Reached error page: about:neterror?e=connectionFailure&u=https%3A//www.ecured.cu/EcuRed&c=UTF-8&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20www.ecured.cu.
 Stacktrace:
 RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
 WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
-TimeoutError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:740:5
-bail@chrome://remote/content/marionette/sync.sys.mjs:211:19
+UnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:832:5
+checkReadyState@chrome://remote/content/marionette/navigate.sys.mjs:58:24
+onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:330:39
+emit@resource://gre/modules/EventEmitter.sys.mjs:148:20
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25
 
 Missing files for the following pids:
-cds154
-cds44
-cds78
-cds91
-cds95
-cds98
-cds166
-cds79
-cds58
+PID: cds154, Link: The Puerto Rican Experience In The U.S. Military: A Century Of Unheralded Service, Label: https://centropr.hunter.cuny.edu/digital-humanities/pr-military/puerto-rican-experience-us-military-century-unheralded-service
+PID: cds44, Link: Cuban Heritage Connection, Label: https://merrick.library.miami.edu/digitalprojects/chc.php
+PID: cds78, Link: Ecologies Entrelacées, Label: https://www.ecologiesentrelacees.com/
+PID: cds91, Link: La Revista América Negra, Label: https://www.javeriana.edu.co/ins-genetica/investigacion/publicaciones/libros/america-negra
+PID: cds95, Link: Junkanoo in Grand Bahama, Label: https://junkanooingb.com/
+PID: cds166, Link: Two Plantations, Label: http://www.twoplantations.com
+PID: cds79, Link: Haitian History Blog, Label: https://haitianhistory.tumblr.com/
+PID: cds58, Link: Ecured, Label: https://www.ecured.cu/EcuRed
